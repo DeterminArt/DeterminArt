@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.logo {
+  width: 120px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #19d6ff;
+}
+
+h2 {
+  color: #d800ff;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #19d6ff;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.team {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.team img {
+  width: 120px;
+  border-radius: 50%;
+}
