@@ -6,7 +6,7 @@ async function send() {
   status.innerText = "AI is interpreting your input...";
 
   try {
-    const res = await fetch("https://determinart-ai.determinart.workers.dev/interperet", {
+    const res = await fetch("https://determinart-ai.determinart.workers.dev/interpret", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password, text })
