@@ -1,56 +1,137 @@
+:root {
+  --bg: #07070a;
+  --panel: #111118;
+  --cyan: #19d6ff;
+  --magenta: #d800ff;
+  --text: #ffffff;
+  --muted: #b5b5b5;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
+/* HERO */
 .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 20px;
+  position: relative;
 }
 
-.logo {
-  width: 120px;
+.hero h1 {
+  font-size: 4rem;
+  margin: 10px 0;
+  color: var(--cyan);
 }
 
-h1 {
-  font-size: 3rem;
-  color: #19d6ff;
+.hero h2 {
+  color: var(--magenta);
+  font-weight: 400;
 }
 
-h2 {
-  color: #d800ff;
+.hero p {
+  max-width: 700px;
+  color: var(--muted);
 }
 
+/* BUTTON */
 .btn {
-  display: inline-block;
   margin-top: 20px;
-  padding: 12px 24px;
-  background: #19d6ff;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
   color: black;
-  border-radius: 8px;
+  font-weight: bold;
+  border-radius: 10px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
 section {
-  padding: 60px 20px;
-  max-width: 900px;
+  padding: 80px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
-img {
-  width: 100%;
-  border-radius: 10px;
+section h2 {
+  color: var(--cyan);
+  margin-bottom: 20px;
 }
 
+/* TEAM */
 .team {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team div {
+  text-align: center;
 }
 
 .team img {
-  width: 120px;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
   border-radius: 50%;
+  border: 2px solid var(--cyan);
+}
+
+/* INPUT PAGE */
+.input-box {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #1a1a22;
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: var(--cyan);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* LOADING */
+#status {
+  margin-top: 10px;
+  color: var(--magenta);
+  font-style: italic;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
 }

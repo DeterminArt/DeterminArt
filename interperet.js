@@ -3,19 +3,24 @@ async function send() {
   const text = document.getElementById("input").value;
   const status = document.getElementById("status");
 
-  status.innerText = "Processing...";
+  status.innerText = "AI is interpreting your input...";
 
-  const res = await fetch("https://YOUR_WORKER_URL/interpret", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ password, text })
-  });
+  try {
+    const res = await fetch("https://determinart-ai.determinart.workers.dev/interperet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, text })
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (data.error) {
-    status.innerText = data.error;
-  } else {
-    status.innerText = "Motion generated and sent to system.";
+    if (data.error) {
+      status.innerText = data.error;
+    } else {
+      status.innerText = "Motion successfully generated and sent to system.";
+    }
+
+  } catch (err) {
+    status.innerText = "Connection error. Please try again.";
   }
 }
