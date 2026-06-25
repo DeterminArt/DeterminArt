@@ -15,6 +15,13 @@ body {
   overflow-x: hidden;
 }
 
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;

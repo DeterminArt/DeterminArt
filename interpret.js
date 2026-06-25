@@ -17,10 +17,11 @@ async function send() {
     if (data.error) {
       status.innerText = data.error;
     } else {
-      status.innerText = "Motion successfully generated and sent to system.";
+      status.innerText = "Motion generated successfully!";
     }
 
   } catch (err) {
-    status.innerText = "Connection error. Please try again.";
+    status.innerText = "❌ No connection to AI backend";
+    console.error(err);
   }
 }
